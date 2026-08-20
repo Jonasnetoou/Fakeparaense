@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Suelem • A Rainha do Treme</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;700;900&display=swap');
+
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      background-color: #030308;
+      color: #fff;
+      font-family: 'Montserrat', sans-serif;
+      overflow-x: hidden;
+      padding-bottom: 50px;
+    }
+
+    #overlay {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: #030308;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      z-index: 9999;
+      text-align: center;
+      padding: 20px;
+    }
+
+    .start-btn {
+      background: linear-gradient(90deg, #00f0ff 0%, #ff0077 50%, #ffe600 100%);
+      color: #000;
+      padding: 22px 45px;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.4rem;
+      letter-spacing: 3px;
+      border: none;
+      border-radius: 50px;
+      cursor: pointer;
+      box-shadow: 0 0 30px rgba(0, 240, 255, 0.8);
+      animation: pulse 1.2s infinite alternate;
+      margin-top: 25px;
+      font-weight: bold;
+    }
+
+    @keyframes pulse {
+      0% { transform: scale(1); filter: drop-shadow(0 0 15px #00f0ff); }
+      100% { transform: scale(1.08); filter: drop-shadow(0 0 30px #ff0077); }
+    }
+
+    .container {
+      max-width: 600px;
+      margin: 0 auto;
+      padding: 20px;
+      position: relative;
+    }
+
+    header {
+      text-align: center;
+      margin: 30px 0 20px;
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 3.8rem;
+      letter-spacing: 2px;
+      color: #ffe600;
+      text-shadow: 0 0 20px #ff0077, 0 0 40px #00f0ff;
+      line-height: 0.95;
+    }
+
+    .subtitle {
+      font-size: 0.85rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      color: #00f0ff;
+      margin-top: 10px;
+      font-weight: 700;
+    }
+
+    .card-frase {
+      border: 2px solid #ff0077;
+      background: rgba(255, 0, 119, 0.08);
+      padding: 18px;
+      margin: 20px 0;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 0 15px rgba(255, 0, 119, 0.3);
+    }
+
+    .card-frase h2 {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 1.8rem;
+      color: #ffe600;
+      letter-spacing: 1px;
+    }
+
+    .card-frase p {
+      font-size: 0.95rem;
+      color: #eee;
+      line-height: 1.4;
+      margin-top: 8px;
+    }
+
+    .section-title {
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2.2rem;
+      color: #00f0ff;
+      letter-spacing: 2px;
+      margin: 30px 0 15px;
+      text-align: center;
+      text-shadow: 0 0 10px rgba(0, 240, 255, 0.5);
+    }
+
+    .photo-card {
+      border-radius: 12px;
+      overflow: hidden;
+      margin-bottom: 20px;
+      border: 2px solid #00f0ff;
+      box-shadow: 0 0 20px rgba(0, 240, 255, 0.4);
+    }
+
+    .photo-card img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+
+    .photo-grid-2 {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 15px;
+      margin-bottom: 20px;
+    }
+
+    .cta-btn {
+      display: block;
+      width: 100%;
+      background: linear-gradient(90deg, #ff0077 0%, #ffe600 100%);
+      color: #000;
+      text-align: center;
+      padding: 18px;
+      font-family: 'Bebas Neue', cursive;
+      font-size: 2rem;
+      letter-spacing: 2px;
+      border-radius: 12px;
+      margin-top: 30px;
+      box-shadow: 0 0 25px rgba(255, 0, 119, 0.6);
+      border: none;
+      cursor: pointer;
+      font-weight: bold;
+    }
+
+    footer {
+      text-align: center;
+      font-size: 0.75rem;
+      color: #777;
+      margin-top: 35px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+    }
+  </style>
+</head>
+<body>
+
+  <div id="overlay">
+    <h1 style="font-size: 3.2rem; color: #ffe600;">SUELEM</h1>
+    <p style="color: #00f0ff; margin-top: 10px; font-size: 0.9rem; text-transform: uppercase; letter-spacing: 2px;">A Paraense Desguiada do Tecnomelody</p>
+    <button class="start-btn" onclick="startAudio()">LIGAR A APARELHAGEM 🔊</button>
+  </div>
+
+  <audio id="tecnomelodyTrack" loop preload="auto">
+    <source src="tecnomelody.mp3" type="audio/mpeg">
+  </audio>
+
+  <div class="container">
+    <header>
+      <h1>SUELEM</h1>
+      <div class="subtitle">A Rainha da Tese • O Perigo do Treme</div>
+    </header>
+
+    <div class="card-frase">
+      <h2>SÓ TESE E MUITA CONVERSA!</h2>
+      <p>Muita conversa, papo afiado, mas na hora H... ilude um por dia, muda de cor e ainda pede um açaí com peixe frito! É doida, é? Tei, tei, tei!</p>
+    </div>
+
+    <!-- SEÇÃO MANAUARA (FOTOS 4 E 5) -->
+    <div class="section-title">modo 1: manauara de salinas ☀️</div>
+    <div class="card-frase" style="border-color: #ffe600; box-shadow: 0 0 15px rgba(255, 230, 0, 0.3);">
+      <p>Tomou sol na praia de Salinas, virou bronze nível Manauara da gema e tá pronta para enrolar mais três otários no drink!</p>
+    </div>
+    <div class="photo-grid-2">
+      <div class="photo-card" style="border-color: #ffe600;">
+        <img src="4.jpg" alt="Foto 4 - Manauara Drink">
+      </div>
+      <div class="photo-card" style="border-color: #ffe600;">
+        <img src="5.jpg" alt="Foto 5 - Manauara Praia">
+      </div>
+    </div>
+
+    <!-- SEÇÃO SULISTA (FOTOS 1, 2, 3, 6 E 7) -->
+    <div class="section-title">modo 2: camaleoa sulista ❄️</div>
+    <div class="card-frase" style="border-color: #00f0ff; box-shadow: 0 0 15px rgba(0, 240, 255, 0.3);">
+      <p>Passou três dias sem ver a luz do sol, meteu a jaqueta e ficou mais branca que o inverno do Sul. Muda de tom mas a cara de pau de dar tese continua idêntica!</p>
+    </div>
+
+    <div class="photo-grid-2">
+      <div class="photo-card">
+        <img src="1.jpg" alt="Foto 1">
+      </div>
+      <div class="photo-card">
+        <img src="2.jpg" alt="Foto 2">
+      </div>
+    </div>
+
+    <div class="photo-grid-2">
+      <div class="photo-card">
+        <img src="3.jpg" alt="Foto 3">
+      </div>
+      <div class="photo-card">
+        <img src="6.jpg" alt="Foto 6">
+      </div>
+    </div>
+
+    <div class="photo-card">
+      <img src="7.jpg" alt="Foto 7">
+    </div>
+
+    <div class="card-frase" style="border-color: #ff0077;">
+      <h2>RESULTADO DO DIAGNÓSTICO</h2>
+      <p>O tom de pele varia conforme a estação, mas a taxa de caras iludidos por semana continua em 100%. Cuidado com a Suelem!</p>
+    </div>
+
+    <button class="cta-btn" onclick="alert('Caiu na tese da Suelem!')">
+      CAIR NA TESE DA SUELEM
+    </button>
+
+    <footer>
+      Direct de Belém do Pará • 2026
+    </footer>
+  </div>
+
+  <script>
+    function startAudio() {
+      var audio = document.getElementById("tecnomelodyTrack");
+      audio.play();
+      document.getElementById("overlay").style.display = "none";
+    }
+  </script>
+</body>
+  </html>
+  
